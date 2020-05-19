@@ -12,7 +12,6 @@
 
 2) На графике потерь все сходятся примерно одинаково. Опять можно выделить Голубой с WarmUp у которого начальное значение меньше, чем у остальных.
 ![1](https://github.com/IGRICHINSKYBSU/obrabMultimediaLab5/raw/master/1.jpg) 
-![1](https://github.com/IGRICHINSKYBSU/obrabMultimediaLab5/raw/master/2.jpg) 
 
 На валидационной выборке 
 
@@ -20,6 +19,7 @@
 так как имеет все же большую точность на верхних пиках, а нижние наименьшие среди остальных.
 
 2) На графике потерь лучший опять Голубой, но он не дошел до конца. Среди оставшихся в самом конце наименьшее значение имеет Оранжевый 0.621, хоть в самом начале он и имел наибольший из всех выброс.
+![1](https://github.com/IGRICHINSKYBSU/obrabMultimediaLab5/raw/master/2.jpg) 
 ![1](https://github.com/IGRICHINSKYBSU/obrabMultimediaLab5/raw/master/3.jpg) 
 ![1](https://github.com/IGRICHINSKYBSU/obrabMultimediaLab5/raw/master/4.jpg) 
 Лучшая сходимость при обучении Голубой= WarmUp ( init_lr = 0.001, drop = 0.5)
