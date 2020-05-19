@@ -80,13 +80,13 @@ def create_dataset(filenames, batch_size):
 
 
 def augmented_train(image, label):
-    image = tf.image.random_flip_left_right(image)  # c-1
+    image = tf.image.random_flip_left_right(image)  
     if random.random() > 0.5:
-        image = tf.contrib.image.rotate(image, 90 * math.pi / 180, interpolation='BILINEAR')  # c-2
-    image = tf.image.random_brightness(image, 0.05)  # c-3
-    image = tf.image.random_contrast(image, 0.7, 1.3)  # c-3
-    # # image = tf.image.random_crop(image, size=[50, 50, 3], seed=None, name=None) # c-4
-    image = tf.image.central_crop(image, central_fraction=0.5)  # c-4
+        image = tf.contrib.image.rotate(image, 90 * math.pi / 180, interpolation='BILINEAR')  
+    image = tf.image.random_brightness(image, 0.05)  
+    image = tf.image.random_contrast(image, 0.7, 1.3)  
+    # # image = tf.image.random_crop(image, size=[50, 50, 3], seed=None, name=None) 
+    image = tf.image.central_crop(image, central_fraction=0.5)  
     return image, label
 
 
@@ -165,6 +165,7 @@ def exp_decay_warmup(epoch):
      lrate = initial_lrate * math.exp(-k*epoch)
    return lrate
 lrate = tf.keras.callbacks.LearningRateScheduler(exp_decay)
+
 
 train_dataset = create_dataset(glob.glob(train_path), BATCH_SIZE)
 train_images, train_labels = train_dataset.make_one_shot_iterator().get_next()
