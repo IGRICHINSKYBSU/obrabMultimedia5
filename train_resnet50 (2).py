@@ -164,7 +164,7 @@ def exp_decay_warmup(epoch):
    else:
      lrate = initial_lrate * math.exp(-k*epoch)
    return lrate
-lrate = tf.keras.callbacks.LearningRateScheduler(exp_decay)
+lrate = tf.keras.callbacks.LearningRateScheduler(exp_decay_warmup)
 
 
 train_dataset = create_dataset(glob.glob(train_path), BATCH_SIZE)
